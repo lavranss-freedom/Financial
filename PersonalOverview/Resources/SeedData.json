@@ -1,0 +1,430 @@
+{
+  "version": 1,
+  "holdings": [
+    {
+      "id": "h-meta",
+      "symbol": "META",
+      "name": "Meta Platforms",
+      "yahooSymbol": "META",
+      "qty": 5,
+      "gav": 583.44,
+      "currency": "USD",
+      "sleeve": "Core",
+      "last": 583.44
+    },
+    {
+      "id": "h-tsla",
+      "symbol": "TSLA",
+      "name": "Tesla",
+      "yahooSymbol": "TSLA",
+      "qty": 8,
+      "gav": 348.55,
+      "currency": "USD",
+      "sleeve": "Growth",
+      "last": 348.55
+    },
+    {
+      "id": "h-gev",
+      "symbol": "GEV",
+      "name": "GE Vernova",
+      "yahooSymbol": "GEV",
+      "qty": 3,
+      "gav": 1036.73,
+      "currency": "USD",
+      "sleeve": "Growth",
+      "last": 1036.73
+    },
+    {
+      "id": "h-aker",
+      "symbol": "AKER.OL",
+      "name": "Aker ASA",
+      "yahooSymbol": "AKER.OL",
+      "qty": 15,
+      "gav": 1458.18,
+      "currency": "NOK",
+      "sleeve": "Fortress",
+      "last": 1458.18
+    },
+    {
+      "id": "h-amzn",
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "yahooSymbol": "AMZN",
+      "qty": 10,
+      "gav": 246.66,
+      "currency": "USD",
+      "sleeve": "Core",
+      "last": 246.66
+    },
+    {
+      "id": "h-googl",
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "yahooSymbol": "GOOGL",
+      "qty": 7,
+      "gav": 344.35,
+      "currency": "USD",
+      "sleeve": "Core",
+      "last": 344.35
+    },
+    {
+      "id": "h-nvda",
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "yahooSymbol": "NVDA",
+      "qty": 10,
+      "gav": 226.58,
+      "currency": "USD",
+      "sleeve": "Growth",
+      "last": 226.58
+    },
+    {
+      "id": "h-blk",
+      "symbol": "BLK",
+      "name": "BlackRock",
+      "yahooSymbol": "BLK",
+      "qty": 2,
+      "gav": 985.37,
+      "currency": "USD",
+      "sleeve": "Fortress",
+      "last": 985.37
+    },
+    {
+      "id": "h-trmed",
+      "symbol": "TRMED.OL",
+      "name": "Thor Medical",
+      "yahooSymbol": "TRMED.OL",
+      "qty": 3902,
+      "gav": 5.8,
+      "currency": "NOK",
+      "sleeve": "Moonshot",
+      "last": 5.8
+    },
+    {
+      "id": "h-meli",
+      "symbol": "MELI",
+      "name": "MercadoLibre",
+      "yahooSymbol": "MELI",
+      "qty": 1,
+      "gav": 1802.08,
+      "currency": "USD",
+      "sleeve": "Growth",
+      "last": 1802.08
+    },
+    {
+      "id": "h-mu",
+      "symbol": "MU",
+      "name": "Micron",
+      "yahooSymbol": "MU",
+      "qty": 2,
+      "gav": 936.84,
+      "currency": "USD",
+      "sleeve": "Growth",
+      "last": 936.84
+    },
+    {
+      "id": "h-isrg",
+      "symbol": "ISRG",
+      "name": "Intuitive Surgical",
+      "yahooSymbol": "ISRG",
+      "qty": 5,
+      "gav": 394.3,
+      "currency": "USD",
+      "sleeve": "Core",
+      "last": 394.3
+    },
+    {
+      "id": "h-kog",
+      "symbol": "KOG.OL",
+      "name": "Kongsberg Gruppen",
+      "yahooSymbol": "KOG.OL",
+      "qty": 55,
+      "gav": 124.26,
+      "currency": "NOK",
+      "sleeve": "Fortress",
+      "last": 124.26
+    },
+    {
+      "id": "h-avgo",
+      "symbol": "AVGO",
+      "name": "Broadcom",
+      "yahooSymbol": "AVGO",
+      "qty": 5,
+      "gav": 381,
+      "currency": "USD",
+      "sleeve": "Growth",
+      "last": 381
+    },
+    {
+      "id": "h-spcx",
+      "symbol": "SPCX",
+      "name": "SpaceX (listed)",
+      "yahooSymbol": "SPCX",
+      "qty": 12,
+      "gav": 143.7,
+      "currency": "USD",
+      "sleeve": "Growth",
+      "last": 143.7
+    },
+    {
+      "id": "h-auto",
+      "symbol": "AUTO.OL",
+      "name": "AutoStore",
+      "yahooSymbol": "AUTO.OL",
+      "qty": 1000,
+      "gav": 13.8,
+      "currency": "NOK",
+      "sleeve": "Growth",
+      "plan": "Warehouse automation compounder",
+      "last": 13.8
+    },
+    {
+      "id": "h-nbis",
+      "symbol": "NBIS",
+      "name": "Nebius Group",
+      "yahooSymbol": "NBIS",
+      "qty": 7,
+      "gav": 241.14,
+      "currency": "USD",
+      "sleeve": "Growth",
+      "last": 241.14
+    },
+    {
+      "id": "h-pltr",
+      "symbol": "PLTR",
+      "name": "Palantir",
+      "yahooSymbol": "PLTR",
+      "qty": 8,
+      "gav": 134.09,
+      "currency": "USD",
+      "sleeve": "Growth",
+      "last": 134.09
+    },
+    {
+      "id": "h-crna",
+      "symbol": "CRNA.OL",
+      "name": "Circio Holding",
+      "yahooSymbol": "CRNA.OL",
+      "qty": 1000,
+      "gav": 11.82,
+      "currency": "NOK",
+      "sleeve": "Moonshot",
+      "last": 11.82
+    },
+    {
+      "id": "h-hood",
+      "symbol": "HOOD",
+      "name": "Robinhood",
+      "yahooSymbol": "HOOD",
+      "qty": 10,
+      "gav": 96.24,
+      "currency": "USD",
+      "sleeve": "Growth",
+      "last": 96.24
+    },
+    {
+      "id": "h-nflx",
+      "symbol": "NFLX",
+      "name": "Netflix",
+      "yahooSymbol": "NFLX",
+      "qty": 14,
+      "gav": 43.66,
+      "currency": "USD",
+      "sleeve": "Core",
+      "last": 43.66
+    },
+    {
+      "id": "h-nykd",
+      "symbol": "NYKD.OL",
+      "name": "Nykode Therapeutics",
+      "yahooSymbol": "NYKD.OL",
+      "qty": 2000,
+      "gav": 4.56,
+      "currency": "NOK",
+      "sleeve": "Moonshot",
+      "last": 4.56
+    },
+    {
+      "id": "h-rdw",
+      "symbol": "RDW",
+      "name": "Redwire",
+      "yahooSymbol": "RDW",
+      "qty": 70,
+      "gav": 9.01,
+      "currency": "USD",
+      "sleeve": "Moonshot",
+      "last": 9.01
+    },
+    {
+      "id": "h-ktos",
+      "symbol": "KTOS",
+      "name": "Kratos Defense",
+      "yahooSymbol": "KTOS",
+      "qty": 15,
+      "gav": 43.81,
+      "currency": "USD",
+      "sleeve": "Growth",
+      "last": 43.81
+    },
+    {
+      "id": "h-fsr",
+      "symbol": "FSR",
+      "name": "Fisker (dead)",
+      "yahooSymbol": "FSR",
+      "qty": 10,
+      "gav": 0,
+      "currency": "USD",
+      "sleeve": "Ignore",
+      "excluded": true,
+      "dead": true,
+      "last": 0
+    }
+  ],
+  "crypto": [
+    {
+      "id": "c-btc",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "yahooSymbol": "BTC-USD",
+      "valueUsd": 2254
+    },
+    {
+      "id": "c-eth",
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "yahooSymbol": "ETH-USD",
+      "valueUsd": 1180
+    },
+    {
+      "id": "c-xrp",
+      "symbol": "XRP",
+      "name": "XRP",
+      "yahooSymbol": "XRP-USD",
+      "valueUsd": 449
+    },
+    {
+      "id": "c-hype",
+      "symbol": "HYPE",
+      "name": "Hyperliquid",
+      "yahooSymbol": "HYPE-USD",
+      "valueUsd": 392
+    },
+    {
+      "id": "c-sol",
+      "symbol": "SOL",
+      "name": "Solana",
+      "yahooSymbol": "SOL-USD",
+      "valueUsd": 348
+    },
+    {
+      "id": "c-doge",
+      "symbol": "DOGE",
+      "name": "Dogecoin",
+      "yahooSymbol": "DOGE-USD",
+      "valueUsd": 173
+    },
+    {
+      "id": "c-shib",
+      "symbol": "SHIB",
+      "name": "Shiba Inu",
+      "yahooSymbol": "SHIB-USD",
+      "valueUsd": 137
+    },
+    {
+      "id": "c-lcx",
+      "symbol": "LCX",
+      "name": "LCX",
+      "yahooSymbol": "LCX-USD",
+      "valueUsd": 121
+    },
+    {
+      "id": "c-eos",
+      "symbol": "EOS",
+      "name": "EOS (dead)",
+      "yahooSymbol": "EOS-USD",
+      "valueUsd": 4.44,
+      "dead": true
+    },
+    {
+      "id": "c-nu",
+      "symbol": "NU",
+      "name": "NuCypher (dead)",
+      "yahooSymbol": "NU-USD",
+      "valueUsd": 0.09,
+      "dead": true
+    }
+  ],
+  "netWorth": {
+    "house1Value": 7000000,
+    "house2Value": 3100000,
+    "houseEquityPct": 50,
+    "mortgageHalf": 4350000,
+    "mortgageRatePct": 5,
+    "cashNok": 0,
+    "otherDebts": 0,
+    "leasedCar": false,
+    "ducatiValue": null,
+    "usdNok": 9.32
+  },
+  "candidates": [
+    {
+      "id": "cand-1",
+      "board": "core",
+      "name": "ASML",
+      "symbol": "ASML",
+      "thesis": "EUV monopoly + AI capex cycle; fortress quality at Growth sleeve size.",
+      "beatsHold": "Could replace / dilute MU or AVGO overweight if sizing tight.",
+      "killCriteria": "Bookings collapse >2 quarters or China export ban deepens materially.",
+      "proposedSize": "1–2% of book",
+      "status": "watch"
+    },
+    {
+      "id": "cand-2",
+      "board": "core",
+      "name": "Equinor",
+      "symbol": "EQNR.OL",
+      "thesis": "NOK cash-flow fortress; dividend + energy transition optionality.",
+      "beatsHold": "Pairs with AKER.OL / KOG.OL as Oslo ballast.",
+      "killCriteria": "Dividend cut or structural Norway tax shock.",
+      "proposedSize": "2–3% of book",
+      "status": "watch"
+    },
+    {
+      "id": "cand-3",
+      "board": "moonshot",
+      "name": "Rocket Lab",
+      "symbol": "RKLB",
+      "thesis": "Launch cadence + constellation vertical; asymmetric space bet.",
+      "beatsHold": "Competes for moonshot slot vs RDW / SPCX.",
+      "killCriteria": "Failed launches streak or dilution without revenue inflection.",
+      "proposedSize": "≤1% (moonshots ≤3% total)",
+      "status": "watch"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "a-welcome",
+      "createdAt": "2026-09-04T12:00:00.000Z",
+      "title": "Welcome to Personal Overview",
+      "body": "Local-first PWA. Quotes are delayed via Yahoo chart API. Seed book loaded for 2026-09-04.",
+      "severity": "info",
+      "read": false
+    }
+  ],
+  "actionLog": [
+    {
+      "id": "log-seed",
+      "at": "2026-09-04T12:00:00.000Z",
+      "action": "Seeded v1 book",
+      "detail": "Listed + crypto + net-worth inputs from 2026-09-04 snapshot"
+    }
+  ],
+  "otherAssets": [
+    {
+      "id": "oa-ducati",
+      "name": "Ducati Streetfighter 848",
+      "valueNok": 0,
+      "note": "Type market value in NOK"
+    }
+  ]
+}
