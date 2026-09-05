@@ -9,8 +9,7 @@
       "qty": 5,
       "gav": 583.44,
       "currency": "USD",
-      "sleeve": "Core",
-      "last": 583.44
+      "sleeve": "Core"
     },
     {
       "id": "h-tsla",
@@ -20,8 +19,7 @@
       "qty": 8,
       "gav": 348.55,
       "currency": "USD",
-      "sleeve": "Growth",
-      "last": 348.55
+      "sleeve": "Growth"
     },
     {
       "id": "h-gev",
@@ -31,8 +29,7 @@
       "qty": 3,
       "gav": 1036.73,
       "currency": "USD",
-      "sleeve": "Growth",
-      "last": 1036.73
+      "sleeve": "Growth"
     },
     {
       "id": "h-aker",
@@ -42,8 +39,7 @@
       "qty": 15,
       "gav": 1458.18,
       "currency": "NOK",
-      "sleeve": "Fortress",
-      "last": 1458.18
+      "sleeve": "Fortress"
     },
     {
       "id": "h-amzn",
@@ -53,8 +49,7 @@
       "qty": 10,
       "gav": 246.66,
       "currency": "USD",
-      "sleeve": "Core",
-      "last": 246.66
+      "sleeve": "Core"
     },
     {
       "id": "h-googl",
@@ -64,8 +59,7 @@
       "qty": 7,
       "gav": 344.35,
       "currency": "USD",
-      "sleeve": "Core",
-      "last": 344.35
+      "sleeve": "Core"
     },
     {
       "id": "h-nvda",
@@ -75,8 +69,7 @@
       "qty": 10,
       "gav": 226.58,
       "currency": "USD",
-      "sleeve": "Growth",
-      "last": 226.58
+      "sleeve": "Growth"
     },
     {
       "id": "h-blk",
@@ -86,8 +79,7 @@
       "qty": 2,
       "gav": 985.37,
       "currency": "USD",
-      "sleeve": "Fortress",
-      "last": 985.37
+      "sleeve": "Fortress"
     },
     {
       "id": "h-trmed",
@@ -97,8 +89,7 @@
       "qty": 3902,
       "gav": 5.8,
       "currency": "NOK",
-      "sleeve": "Moonshot",
-      "last": 5.8
+      "sleeve": "Moonshot"
     },
     {
       "id": "h-meli",
@@ -108,8 +99,7 @@
       "qty": 1,
       "gav": 1802.08,
       "currency": "USD",
-      "sleeve": "Growth",
-      "last": 1802.08
+      "sleeve": "Growth"
     },
     {
       "id": "h-mu",
@@ -119,8 +109,7 @@
       "qty": 2,
       "gav": 936.84,
       "currency": "USD",
-      "sleeve": "Growth",
-      "last": 936.84
+      "sleeve": "Growth"
     },
     {
       "id": "h-isrg",
@@ -130,8 +119,7 @@
       "qty": 5,
       "gav": 394.3,
       "currency": "USD",
-      "sleeve": "Core",
-      "last": 394.3
+      "sleeve": "Core"
     },
     {
       "id": "h-kog",
@@ -141,8 +129,7 @@
       "qty": 55,
       "gav": 124.26,
       "currency": "NOK",
-      "sleeve": "Fortress",
-      "last": 124.26
+      "sleeve": "Fortress"
     },
     {
       "id": "h-avgo",
@@ -152,8 +139,7 @@
       "qty": 5,
       "gav": 381,
       "currency": "USD",
-      "sleeve": "Growth",
-      "last": 381
+      "sleeve": "Growth"
     },
     {
       "id": "h-spcx",
@@ -163,8 +149,7 @@
       "qty": 12,
       "gav": 143.7,
       "currency": "USD",
-      "sleeve": "Growth",
-      "last": 143.7
+      "sleeve": "Growth"
     },
     {
       "id": "h-auto",
@@ -175,8 +160,7 @@
       "gav": 13.8,
       "currency": "NOK",
       "sleeve": "Growth",
-      "plan": "Warehouse automation compounder",
-      "last": 13.8
+      "plan": "Warehouse automation compounder"
     },
     {
       "id": "h-nbis",
@@ -186,8 +170,7 @@
       "qty": 7,
       "gav": 241.14,
       "currency": "USD",
-      "sleeve": "Growth",
-      "last": 241.14
+      "sleeve": "Growth"
     },
     {
       "id": "h-pltr",
@@ -197,8 +180,7 @@
       "qty": 8,
       "gav": 134.09,
       "currency": "USD",
-      "sleeve": "Growth",
-      "last": 134.09
+      "sleeve": "Growth"
     },
     {
       "id": "h-crna",
@@ -208,8 +190,7 @@
       "qty": 1000,
       "gav": 11.82,
       "currency": "NOK",
-      "sleeve": "Moonshot",
-      "last": 11.82
+      "sleeve": "Moonshot"
     },
     {
       "id": "h-hood",
@@ -219,8 +200,7 @@
       "qty": 10,
       "gav": 96.24,
       "currency": "USD",
-      "sleeve": "Growth",
-      "last": 96.24
+      "sleeve": "Growth"
     },
     {
       "id": "h-nflx",
@@ -230,8 +210,7 @@
       "qty": 14,
       "gav": 43.66,
       "currency": "USD",
-      "sleeve": "Core",
-      "last": 43.66
+      "sleeve": "Core"
     },
     {
       "id": "h-nykd",
@@ -241,8 +220,7 @@
       "qty": 2000,
       "gav": 4.56,
       "currency": "NOK",
-      "sleeve": "Moonshot",
-      "last": 4.56
+      "sleeve": "Moonshot"
     },
     {
       "id": "h-rdw",
@@ -252,8 +230,7 @@
       "qty": 70,
       "gav": 9.01,
       "currency": "USD",
-      "sleeve": "Moonshot",
-      "last": 9.01
+      "sleeve": "Moonshot"
     },
     {
       "id": "h-ktos",
@@ -263,8 +240,7 @@
       "qty": 15,
       "gav": 43.81,
       "currency": "USD",
-      "sleeve": "Growth",
-      "last": 43.81
+      "sleeve": "Growth"
     },
     {
       "id": "h-fsr",
@@ -276,8 +252,7 @@
       "currency": "USD",
       "sleeve": "Ignore",
       "excluded": true,
-      "dead": true,
-      "last": 0
+      "dead": true
     }
   ],
   "crypto": [
@@ -375,7 +350,7 @@
       "thesis": "EUV monopoly + AI capex cycle; fortress quality at Growth sleeve size.",
       "beatsHold": "Could replace / dilute MU or AVGO overweight if sizing tight.",
       "killCriteria": "Bookings collapse >2 quarters or China export ban deepens materially.",
-      "proposedSize": "1–2% of book",
+      "proposedSize": "1\u20132% of book",
       "status": "watch"
     },
     {
@@ -386,7 +361,7 @@
       "thesis": "NOK cash-flow fortress; dividend + energy transition optionality.",
       "beatsHold": "Pairs with AKER.OL / KOG.OL as Oslo ballast.",
       "killCriteria": "Dividend cut or structural Norway tax shock.",
-      "proposedSize": "2–3% of book",
+      "proposedSize": "2\u20133% of book",
       "status": "watch"
     },
     {
@@ -397,7 +372,7 @@
       "thesis": "Launch cadence + constellation vertical; asymmetric space bet.",
       "beatsHold": "Competes for moonshot slot vs RDW / SPCX.",
       "killCriteria": "Failed launches streak or dilution without revenue inflection.",
-      "proposedSize": "≤1% (moonshots ≤3% total)",
+      "proposedSize": "\u22641% (moonshots \u22643% total)",
       "status": "watch"
     }
   ],
