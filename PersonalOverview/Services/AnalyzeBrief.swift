@@ -5,7 +5,7 @@ enum AnalyzeBrief {
         let ret = PortfolioCalc.holdingReturnPct(h)
         let px = h.last ?? h.gav
         var lines: [String] = []
-        lines.append("## \(h.symbol) — \(h.name)")
+        lines.append("## \(TickerDisplay.display(h.symbol)) — \(h.name)")
         lines.append("")
         lines.append("**Sleeve:** \(h.sleeve.rawValue)\(h.excluded == true ? " (EXCLUDED)" : "")")
         lines.append("**GAV:** \(Formatters.price(h.gav, h.currency)) → **Last:** \(Formatters.price(px, h.currency)) (\(Formatters.pct(ret)))")

@@ -102,10 +102,10 @@ struct BookView: View {
         let value = PortfolioCalc.holdingValueNok(h, usdNok: usdNok)
         let ret = PortfolioCalc.holdingReturnPct(h)
         let weight = PortfolioCalc.holdingWeight(h, holdings: holdings, usdNok: usdNok)
-        let px = h.last ?? h.gav
+        let hasQuote = h.quoteAsOf != nil && h.last != nil
         return VStack(alignment: .leading, spacing: 6) {
             HStack {
-                Text(h.symbol)
+                Text(TickerDisplay.display(h.symbol))
                     .font(.subheadline.weight(.bold))
                     .foregroundStyle(AppTheme.textPrimary)
                 Text(h.sleeve.rawValue)
@@ -129,7 +129,7 @@ struct BookView: View {
             HStack(spacing: 10) {
                 Text("qty \(Formatters.num(h.qty, digits: 0))")
                 Text("GAV \(Formatters.num(h.gav, digits: 2))")
-                Text("last \(Formatters.num(px, digits: 2))")
+                Text(hasQuote ? "last \(Formatters.num(h.last ?? 0, digits: 2))" : "last —")
                 Text(Formatters.pct(ret))
                     .foregroundStyle((ret ?? 0) >= 0 ? AppTheme.positive : AppTheme.negative)
                 if let d = h.dayChangePercent {

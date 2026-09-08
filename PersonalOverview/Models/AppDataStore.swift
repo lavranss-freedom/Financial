@@ -45,8 +45,10 @@ final class AppDataStore: ObservableObject {
     }
 
     private func loadSeedIfNeeded() {
-        if let saved = loadPersisted() {
+        if var saved = loadPersisted() {
+            saved = normalizeDisplaySymbols(saved)
             data = saved
+            persist()
             return
         }
         do {
@@ -62,7 +64,7 @@ final class AppDataStore: ObservableObject {
                 if copy.at.isEmpty { copy.at = now }
                 return copy
             }
-            data = seed
+            data = normalizeDisplaySymbols(seed)
             persist()
         } catch {
             lastError = error.localizedDescription
@@ -74,6 +76,31 @@ final class AppDataStore: ObservableObject {
         if let encoded = try? JSONEncoder().encode(data) {
             UserDefaults.standard.set(encoded, forKey: defaultsKey)
         }
+    }
+
+
+    private func normalizeDisplaySymbols(_ data: AppData) -> AppData {
+        var d = data
+        d.holdings = d.holdings.map { h in
+            var copy = h
+            let yahoo = h.yahooSymbol.isEmpty ? h.symbol : h.yahooSymbol
+            copy.yahooSymbol = yahoo
+            copy.symbol = TickerDisplay.display(h.symbol.isEmpty ? yahoo : h.symbol)
+            return copy
+        }
+        d.candidates = d.candidates.map { c in
+            var copy = c
+            if let s = c.symbol { copy.symbol = TickerDisplay.display(s) }
+            copy.beatsHold = TickerDisplay.stripOlMentions(c.beatsHold)
+            return copy
+        }
+        d.alerts = d.alerts.map { a in
+            var copy = a
+            if let s = a.symbol { copy.symbol = TickerDisplay.display(s) }
+            copy.title = TickerDisplay.stripOlMentions(a.title)
+            return copy
+        }
+        return d
     }
 
     private func loadPersisted() -> AppData? {

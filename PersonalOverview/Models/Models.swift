@@ -151,3 +151,33 @@ struct NetWorthBreakdown {
     var liabilities: Double
     var netWorth: Double
 }
+
+enum TickerDisplay {
+    /// Yahoo exchange suffixes hidden in the UI. Share-class dots (BRK.B) stay.
+    private static let exchangeSuffixes: Set<String> = [
+        "OL", "ST", "CO", "HE", "DE", "PA", "AS", "TO", "HK", "AX", "SW",
+        "MI", "MC", "BR", "VI", "LS", "IR", "KS", "TW", "SI", "SS", "SZ",
+        "SG", "IS", "TA", "SA", "MX", "JK", "NS", "BO", "KL", "BK", "NZ",
+        "JO", "WA", "PR", "SN", "BA", "CN", "NE", "L", "T", "V", "F"
+    ]
+    private static let singleLetterExchanges: Set<String> = ["L", "T", "V", "F"]
+
+    static func display(_ symbol: String?) -> String {
+        guard let symbol else { return "" }
+        let trimmed = symbol.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let dot = trimmed.lastIndex(of: ".") else { return trimmed }
+        let root = String(trimmed[..<dot])
+        let suf = String(trimmed[trimmed.index(after: dot)...]).uppercased()
+        guard !root.isEmpty, exchangeSuffixes.contains(suf) else { return trimmed }
+        if suf.count == 1, !singleLetterExchanges.contains(suf) { return trimmed }
+        return root
+    }
+
+    static func stripOlMentions(_ text: String) -> String {
+        guard let re = try? NSRegularExpression(pattern: #"\b([A-Z0-9-]{1,12})\.OL\b"#, options: []) else {
+            return text
+        }
+        let range = NSRange(text.startIndex..., in: text)
+        return re.stringByReplacingMatches(in: text, options: [], range: range, withTemplate: "$1")
+    }
+}

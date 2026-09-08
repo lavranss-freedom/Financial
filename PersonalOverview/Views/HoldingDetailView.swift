@@ -8,7 +8,7 @@ struct HoldingDetailView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(holding.symbol)
+                    Text(TickerDisplay.display(holding.symbol))
                         .font(.largeTitle.bold())
                         .foregroundStyle(AppTheme.gold)
                     Text(holding.name)

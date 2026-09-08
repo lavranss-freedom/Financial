@@ -38,7 +38,7 @@ struct CandidatesView: View {
                     HStack {
                         Text(c.name).font(.headline).foregroundStyle(AppTheme.textPrimary)
                         if let s = c.symbol {
-                            Text(s).font(.caption).foregroundStyle(AppTheme.gold)
+                            Text(TickerDisplay.display(s)).font(.caption).foregroundStyle(AppTheme.gold)
                         }
                         Spacer()
                         Text(c.status.rawValue.uppercased())

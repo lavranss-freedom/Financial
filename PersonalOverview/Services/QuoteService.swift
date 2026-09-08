@@ -58,7 +58,9 @@ actor QuoteService {
         }
 
         let session = sessionDay(meta: meta, result: result)
-        let last = session.last
+        // Last is independent of day proof. Oslo charts often have a null
+        // intermediate close; that dashes Day % only and must not blank last.
+        let last = number(meta["regularMarketPrice"]) ?? session.last ?? latestClose(result: result)
 
         let ahPrice = number(meta["postMarketPrice"])
         var ahPct = number(meta["postMarketChangePercent"])
@@ -87,8 +89,18 @@ actor QuoteService {
 
     /// Session vs previous official close. Never chartPreviousClose, GAV, or 5-day range start.
     /// Day % is nil unless previous close is the immediately prior session.
+    private func latestClose(result: [String: Any]) -> Double? {
+        let quote = (result["indicators"] as? [String: Any])?["quote"] as? [[String: Any]]
+        let rawCloses = quote?.first?["close"] as? [Any] ?? []
+        for item in rawCloses.reversed() {
+            if let close = number(item) { return close }
+        }
+        return nil
+    }
+
     private func sessionDay(meta: [String: Any], result: [String: Any]) -> (last: Double?, previousClose: Double?, dayChangePercent: Double?) {
-        let last = number(meta["regularMarketPrice"])
+        // regularMarketPrice first; else latest non-null daily close. Never require previous close.
+        let last = number(meta["regularMarketPrice"]) ?? latestClose(result: result)
         let yahooPct = number(meta["regularMarketChangePercent"])
         let officialPrev = number(meta["previousClose"])
         let priorClose = priorSessionClose(result: result, meta: meta)
