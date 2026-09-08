@@ -206,6 +206,6 @@ final class AppDataStore: ObservableObject {
         data = d
         persist()
         isRefreshingQuotes = false
-        quoteStatus = "Delayed Yahoo · \(ok) marks updated · offline falls back to last/GAV"
+        quoteStatus = "Delayed · \(ok) marks updated · Oslo Euronext close, US/crypto Yahoo"
     }
 }
