@@ -57,15 +57,8 @@ actor QuoteService {
             return QuoteResult(symbol: symbol, delayed: true, error: "parse")
         }
 
-        let last = number(meta["regularMarketPrice"])
-            ?? number(meta["postMarketPrice"])
-            ?? number(meta["previousClose"])
-        let previous = number(meta["chartPreviousClose"])
-            ?? number(meta["previousClose"])
-        var dayPct = number(meta["regularMarketChangePercent"])
-        if dayPct == nil, let last, let previous, previous != 0 {
-            dayPct = ((last - previous) / previous) * 100
-        }
+        let session = sessionDay(meta: meta, result: result)
+        let last = session.last
 
         let ahPrice = number(meta["postMarketPrice"])
         var ahPct = number(meta["postMarketChangePercent"])
@@ -74,8 +67,8 @@ actor QuoteService {
         }
 
         let asOf: String? = {
-            if let t = meta["regularMarketTime"] as? Int {
-                return ISO8601DateFormatter().string(from: Date(timeIntervalSince1970: TimeInterval(t)))
+            if let t = number(meta["regularMarketTime"]) {
+                return ISO8601DateFormatter().string(from: Date(timeIntervalSince1970: t))
             }
             return ISO8601DateFormatter().string(from: Date())
         }()
@@ -83,8 +76,8 @@ actor QuoteService {
         return QuoteResult(
             symbol: symbol,
             last: last,
-            previousClose: previous,
-            dayChangePercent: dayPct,
+            previousClose: session.previousClose,
+            dayChangePercent: session.dayChangePercent,
             afterHoursPrice: ahPrice,
             afterHoursChangePercent: ahPct,
             delayed: true,
@@ -92,10 +85,85 @@ actor QuoteService {
         )
     }
 
+    /// Session vs previous official close. Never chartPreviousClose, GAV, or 5-day range start.
+    /// Day % is nil unless previous close is the immediately prior session.
+    private func sessionDay(meta: [String: Any], result: [String: Any]) -> (last: Double?, previousClose: Double?, dayChangePercent: Double?) {
+        let last = number(meta["regularMarketPrice"])
+        let yahooPct = number(meta["regularMarketChangePercent"])
+        let officialPrev = number(meta["previousClose"])
+        let priorClose = priorSessionClose(result: result, meta: meta)
+
+        var prev: Double? = nil
+        var proven = false
+        if let priorClose, priorClose != 0 {
+            if let officialPrev {
+                if closeMatches(officialPrev, priorClose) {
+                    prev = officialPrev
+                    proven = true
+                }
+            } else {
+                prev = priorClose
+                proven = true
+            }
+        }
+
+        guard proven, let prev, prev != 0, let last else {
+            return (last, nil, nil)
+        }
+        if let yahooPct, let implied = impliedPrevious(last: last, pct: yahooPct), closeMatches(implied, prev) {
+            return (last, prev, yahooPct)
+        }
+        return (last, prev, ((last - prev) / prev) * 100)
+    }
+
+    private func priorSessionClose(result: [String: Any], meta: [String: Any]) -> Double? {
+        let timestamps = result["timestamp"] as? [Any] ?? []
+        let quote = (result["indicators"] as? [String: Any])?["quote"] as? [[String: Any]]
+        let rawCloses = quote?.first?["close"] as? [Any] ?? []
+        let sessionStart = ((meta["currentTradingPeriod"] as? [String: Any])?["regular"] as? [String: Any]).flatMap { number($0["start"]) }
+
+        var points: [(t: Double, close: Double?)] = []
+        let n = max(timestamps.count, rawCloses.count)
+        for i in 0..<n {
+            guard i < timestamps.count, let t = number(timestamps[i]) else { continue }
+            let close = i < rawCloses.count ? number(rawCloses[i]) : nil
+            points.append((t, close))
+        }
+        guard !points.isEmpty else { return nil }
+
+        let cutoff = sessionStart ?? points[points.count - 1].t
+        let before = points.filter { $0.t < cutoff }
+        guard !before.isEmpty else { return nil }
+
+        var prior: (t: Double, close: Double)? = nil
+        for p in before.reversed() {
+            if let close = p.close {
+                prior = (p.t, close)
+                break
+            }
+        }
+        guard let prior else { return nil }
+        if before.contains(where: { $0.t > prior.t }) { return nil }
+        let gap = cutoff - prior.t
+        if gap <= 0 || gap > 5 * 24 * 3600 { return nil }
+        return prior.close
+    }
+
+    private func closeMatches(_ a: Double, _ b: Double) -> Bool {
+        abs(a - b) <= max(0.05, abs(b) * 0.0015)
+    }
+
+    private func impliedPrevious(last: Double, pct: Double) -> Double? {
+        let denom = 1 + pct / 100
+        guard denom != 0, denom.isFinite else { return nil }
+        let prev = last / denom
+        return prev.isFinite && prev != 0 ? prev : nil
+    }
+
     private func number(_ any: Any?) -> Double? {
-        if let d = any as? Double { return d }
+        if let d = any as? Double { return d.isFinite ? d : nil }
         if let i = any as? Int { return Double(i) }
-        if let n = any as? NSNumber { return n.doubleValue }
+        if let n = any as? NSNumber { return n.doubleValue.isFinite ? n.doubleValue : nil }
         return nil
     }
 }
